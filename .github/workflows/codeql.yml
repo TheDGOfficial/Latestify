@@ -1,0 +1,56 @@
+name: "CodeQL Advanced"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '17 0 * * 3'
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    strategy:
+      matrix:
+        include:
+        - language: actions
+          build-mode: none
+        - language: java
+          build-mode: autobuild
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v6
+
+    - name: setup jdk
+      uses: actions/setup-java@v5
+      with:
+        java-version: '26'
+        distribution: 'temurin'
+
+    - name: setup gradle
+      uses: gradle/actions/setup-gradle@50e97c2cd7a37755bbfafc9c5b7cafaece252f6e
+      with:
+        cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+        add-job-summary-as-pr-comment: 'on-failure'
+        allow-snapshot-wrappers: false
+        build-scan-publish: true
+        build-scan-terms-of-use-url: 'https://gradle.com/terms-of-service'
+        build-scan-terms-of-use-agree: 'yes'
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v4
+      with:
+        languages: ${{ matrix.language }}
+        build-mode: ${{ matrix.build-mode }}
+        queries: +security-extended,security-and-quality
+        #packs: ${{ matrix.language == 'java' && 'githubsecuritylab/codeql-java-queries,githubsecuritylab/codeql-java-libs,githubsecuritylab/codeql-java-library-sources' || '' }}
+        config-file: .github/codeql/codeql-config.yml
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v4
+      with:
+        category: "/language:${{matrix.language}}"
