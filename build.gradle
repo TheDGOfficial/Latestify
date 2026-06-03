@@ -13,7 +13,7 @@ loom {
 	}
 }
 
-final def nettyVersion = '4.2.14.Final'
+final def nettyVersion = '4.2.15.Final'
 final def nettyUtilVersion = '0.0.10.Final'
 
 dependencies {
