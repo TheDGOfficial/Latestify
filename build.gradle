@@ -16,10 +16,18 @@ loom {
 final def nettyVersion = '4.2.15.Final'
 final def nettyUtilVersion = '0.0.10.Final'
 
+final def log4jVersion = '2.26.0'
+final def jnaVersion = '5.19.0'
+
+//final def asmVersion = '9.10'
+
+//final def lwjglVersion = '3.4.1'
+
 dependencies {
 	minecraft('com.mojang:minecraft:26.1.2') {
         transitive = false
     }
+
 	implementation('net.fabricmc:fabric-loader:0.19.2') {
         transitive = false
     }
@@ -69,9 +77,9 @@ dependencies {
     }
 
     // Fixes security issues (2.25.4+)!
-    addDep('org.apache.logging.log4j:log4j-api:2.26.0') // 3.0.0-beta3 available
-    addDep('org.apache.logging.log4j:log4j-core:2.26.0')
-    addDep('org.apache.logging.log4j:log4j-slf4j2-impl:2.26.0')
+    addDep("org.apache.logging.log4j:log4j-api:$log4jVersion") // 3.0.0-beta3 available
+    addDep("org.apache.logging.log4j:log4j-core:$log4jVersion")
+    addDep("org.apache.logging.log4j:log4j-slf4j2-impl:$log4jVersion")
 
     // Others
     addDep('at.yawk.lz4:lz4-java:1.11.0')
@@ -85,8 +93,10 @@ dependencies {
     addDep('com.mojang:text2speech:1.19.12')
     addDep('commons-codec:commons-codec:1.22.0')
     addDep('commons-io:commons-io:2.22.0')
-    addDep('net.java.dev.jna:jna:5.19.0')
-    addDep('net.java.dev.jna:jna-platform:5.19.0')
+
+    addDep("net.java.dev.jna:jna:$jnaVersion")
+    addDep("net.java.dev.jna:jna-platform:$jnaVersion")
+
     addDep('org.apache.commons:commons-lang3:3.20.0')
     addDep('org.slf4j:slf4j-api:2.0.18') // 2.1.0-alpha1 available
     addDep('net.sf.jopt-simple:jopt-simple:6.0-alpha-3')
@@ -94,33 +104,37 @@ dependencies {
     //addDep('com.mojang:authlib:7.0.63') // latest in 26.1.2; older in 1.21.11
 
     // ASM must be upgraded in versions/26.1.2-fabric-loader-0.19.2.json file, otherwise crashes game
-    /*addDep('org.ow2.asm:asm:9.10')
-    addDep('org.ow2.asm:asm-analysis:9.10')
-    addDep('org.ow2.asm:asm-commons:9.10')
-    addDep('org.ow2.asm:asm-tree:9.10')
-    addDep('org.ow2.asm:asm-util:9.10')*/
+    /*
+    addDep("org.ow2.asm:asm:$asmVersion")
+    addDep("org.ow2.asm:asm-analysis:$asmVersion")
+    addDep("org.ow2.asm:asm-commons:$asmVersion")
+    addDep("org.ow2.asm:asm-tree:$asmVersion")
+    addDep("org.ow2.asm:asm-util:$asmVersion")
+    */
 
     // The game depends on older removed deprecated methods being present
     //addDep('com.github.oshi:oshi-core:7.1.0')
 
     // Trying to force a newer LWJGL first makes Sodium complain about mismatched GLFW version,
     // and then crashes the game if you disable Sodium's complaint due to a missing preedit IME callback error.
-    /*addDep('org.lwjgl:lwjgl:3.4.1')
-    addDep('org.lwjgl:lwjgl-freetype:3.4.1')
-    addDep('org.lwjgl:lwjgl-glfw:3.4.1')
-    addDep('org.lwjgl:lwjgl-jemalloc:3.4.1')
-    addDep('org.lwjgl:lwjgl-openal:3.4.1')
-    addDep('org.lwjgl:lwjgl-opengl:3.4.1')
-    addDep('org.lwjgl:lwjgl-stb:3.4.1')
-    addDep('org.lwjgl:lwjgl-tinyfd:3.4.1')
-    addDep('org.lwjgl:lwjgl:3.4.1:natives-linux')
-    addDep('org.lwjgl:lwjgl-freetype:3.4.1:natives-linux')
-    addDep('org.lwjgl:lwjgl-glfw:3.4.1:natives-linux')
-    addDep('org.lwjgl:lwjgl-jemalloc:3.4.1:natives-linux')
-    addDep('org.lwjgl:lwjgl-openal:3.4.1:natives-linux')
-    addDep('org.lwjgl:lwjgl-opengl:3.4.1:natives-linux')
-    addDep('org.lwjgl:lwjgl-stb:3.4.1:natives-linux')
-    addDep('org.lwjgl:lwjgl-tinyfd:3.4.1:natives-linux')*/
+    /*
+    addDep("org.lwjgl:lwjgl:$lwjglVersion")
+    addDep("org.lwjgl:lwjgl-freetype:$lwjglVersion")
+    addDep("org.lwjgl:lwjgl-glfw:$lwjglVersion")
+    addDep("org.lwjgl:lwjgl-jemalloc:$lwjglVersion")
+    addDep("org.lwjgl:lwjgl-openal:$lwjglVersion")
+    addDep("org.lwjgl:lwjgl-opengl:$lwjglVersion")
+    addDep("org.lwjgl:lwjgl-stb:$lwjglVersion")
+    addDep("org.lwjgl:lwjgl-tinyfd:$lwjglVersion")
+    addDep("org.lwjgl:lwjgl:$lwjglVersion:natives-linux")
+    addDep("org.lwjgl:lwjgl-freetype:$lwjglVersion:natives-linux")
+    addDep("org.lwjgl:lwjgl-glfw:$lwjglVersion:natives-linux")
+    addDep("org.lwjgl:lwjgl-jemalloc:$lwjglVersion:natives-linux")
+    addDep("org.lwjgl:lwjgl-openal:$lwjglVersion:natives-linux")
+    addDep("org.lwjgl:lwjgl-opengl:$lwjglVersion:natives-linux")
+    addDep("org.lwjgl:lwjgl-stb:$lwjglVersion:natives-linux")
+    addDep("org.lwjgl:lwjgl-tinyfd:$lwjglVersion:natives-linux")
+    */
 
     // These are already latest
     //addDep('com.google.guava:failureaccess:1.0.3')
