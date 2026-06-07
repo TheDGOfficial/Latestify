@@ -1,5 +1,5 @@
 plugins {
-	id 'net.fabricmc.fabric-loom' version '1.16.2'
+	id 'net.fabricmc.fabric-loom' version '1.17.1'
 }
 
 version = project.mod_version
@@ -28,7 +28,7 @@ dependencies {
         transitive = false
     }
 
-	implementation('net.fabricmc:fabric-loader:0.19.2') {
+	implementation('net.fabricmc:fabric-loader:0.19.3') {
         transitive = false
     }
 
@@ -76,6 +76,8 @@ dependencies {
         addDep(dep)
     }
 
+    addDep('io.netty:netty-jni-util:0.0.10.Final')
+
     // Fixes security issues (2.25.4+)!
     addDep("org.apache.logging.log4j:log4j-api:$log4jVersion") // 3.0.0-beta3 available
     addDep("org.apache.logging.log4j:log4j-core:$log4jVersion")
@@ -100,6 +102,8 @@ dependencies {
     addDep('org.apache.commons:commons-lang3:3.20.0')
     addDep('org.slf4j:slf4j-api:2.0.18') // 2.1.0-alpha1 available
     addDep('net.sf.jopt-simple:jopt-simple:6.0-alpha-3')
+
+    addDep('org.joml:joml:1.10.9')
 
     //addDep('com.mojang:authlib:7.0.63') // latest in 26.1.2; older in 1.21.11
 
@@ -147,7 +151,6 @@ dependencies {
     //addDep('it.unimi.dsi:fastutil:8.5.18')
     //addDep('org.apache.commons:commons-compress:1.28.0')
     //addDep('org.jcraft:jorbis:0.0.17')
-    //addDep('org.joml:joml:1.10.8')
     //addDep('org.jspecify:jspecify:1.0.0')
     //addDep('com.mojang:datafixerupper:9.0.19') // 10.0.21 available
 }
