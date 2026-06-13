@@ -1,5 +1,5 @@
 plugins {
-	id 'net.fabricmc.fabric-loom' version '1.17.1'
+	id 'net.fabricmc.fabric-loom' version '1.17.11'
 }
 
 version = project.mod_version
