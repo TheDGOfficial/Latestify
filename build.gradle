@@ -19,7 +19,7 @@ final def nettyUtilVersion = '0.0.10.Final'
 final def log4jVersion = '2.26.0'
 final def jnaVersion = '5.19.1'
 
-//final def asmVersion = '9.10'
+//final def asmVersion = '9.10.1'
 
 //final def lwjglVersion = '3.4.1'
 
@@ -76,7 +76,7 @@ dependencies {
         addDep(dep)
     }
 
-    addDep('io.netty:netty-jni-util:0.0.10.Final')
+    addDep("io.netty:netty-jni-util:$nettyUtilVersion")
 
     // Fixes security issues (2.25.4+)!
     addDep("org.apache.logging.log4j:log4j-api:$log4jVersion") // 3.0.0-beta3 available
@@ -105,7 +105,7 @@ dependencies {
 
     addDep('org.joml:joml:1.10.9')
 
-    //addDep('com.mojang:authlib:7.0.63') // latest in 26.1.2; older in 1.21.11
+    addDep('com.mojang:authlib:9.0.75')
 
     // ASM must be upgraded in versions/26.1.2-fabric-loader-0.19.2.json file, otherwise crashes game
     /*
@@ -116,8 +116,7 @@ dependencies {
     addDep("org.ow2.asm:asm-util:$asmVersion")
     */
 
-    // The game depends on older removed deprecated methods being present
-    //addDep('com.github.oshi:oshi-core:7.1.0')
+    addDep('com.github.oshi:oshi-core:6.12.0') // 7.1.0 available; the game depends on older removed deprecated methods being present though
 
     // Trying to force a newer LWJGL first makes Sodium complain about mismatched GLFW version,
     // and then crashes the game if you disable Sodium's complaint due to a missing preedit IME callback error.
@@ -145,14 +144,14 @@ dependencies {
     //addDep('com.mojang:blocklist:1.0.10')
     //addDep('com.mojang:brigadier:1.3.10')
     //addDep('com.mojang:jtracy:1.0.37')
-    //addDep('com.mojang:logging:1.6.11')
-    //addDep('com.mojang:patchy:2.2.10')
     //addDep('com.mojang:jtracy:1.0.37:natives-linux')
+    addDep('com.mojang:logging:1.7.12')
+    //addDep('com.mojang:patchy:2.2.10')
     //addDep('it.unimi.dsi:fastutil:8.5.18')
     //addDep('org.apache.commons:commons-compress:1.28.0')
     //addDep('org.jcraft:jorbis:0.0.17')
     //addDep('org.jspecify:jspecify:1.0.0')
-    //addDep('com.mojang:datafixerupper:9.0.19') // 10.0.21 available
+    //addDep('com.mojang:datafixerupper:9.0.19') // 10.0.21 available (crashes on 26.1.2 when clicking on multiplayer button)
 }
 
 processResources {
