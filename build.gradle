@@ -21,7 +21,12 @@ final def jnaVersion = '5.19.1'
 
 //final def asmVersion = '9.10.1'
 
-//final def lwjglVersion = '3.4.1'
+final def lwjglVersion = '3.4.2-SNAPSHOT'
+
+repositories {
+    // Required for LWJGL snapshots
+    maven { url "https://central.sonatype.com/repository/maven-snapshots" }
+}
 
 dependencies {
 	minecraft('com.mojang:minecraft:26.1.2') {
@@ -120,7 +125,6 @@ dependencies {
 
     // Trying to force a newer LWJGL first makes Sodium complain about mismatched GLFW version,
     // and then crashes the game if you disable Sodium's complaint due to a missing preedit IME callback error.
-    /*
     addDep("org.lwjgl:lwjgl:$lwjglVersion")
     addDep("org.lwjgl:lwjgl-freetype:$lwjglVersion")
     addDep("org.lwjgl:lwjgl-glfw:$lwjglVersion")
@@ -137,7 +141,6 @@ dependencies {
     addDep("org.lwjgl:lwjgl-opengl:$lwjglVersion:natives-linux")
     addDep("org.lwjgl:lwjgl-stb:$lwjglVersion:natives-linux")
     addDep("org.lwjgl:lwjgl-tinyfd:$lwjglVersion:natives-linux")
-    */
 
     // These are already latest
     //addDep('com.google.guava:failureaccess:1.0.3')
