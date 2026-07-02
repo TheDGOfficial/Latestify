@@ -16,7 +16,7 @@ loom {
 final def nettyVersion = '4.2.15.Final'
 final def nettyUtilVersion = '0.0.10.Final'
 
-final def log4jVersion = '2.26.0'
+final def log4jVersion = '2.26.1'
 final def jnaVersion = '5.19.1'
 
 //final def asmVersion = '9.10.1'
