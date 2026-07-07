@@ -89,7 +89,7 @@ dependencies {
     addDep("org.apache.logging.log4j:log4j-slf4j2-impl:$log4jVersion")
 
     // Others
-    addDep('at.yawk.lz4:lz4-java:1.11.0')
+    addDep('at.yawk.lz4:lz4-java:1.11.1')
     addDep('com.azure:azure-json:1.5.1')
 
     addDep('com.google.code.gson:gson:2.14.0')
