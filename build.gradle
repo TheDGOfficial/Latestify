@@ -1,5 +1,5 @@
 plugins {
-	id 'net.fabricmc.fabric-loom' version '1.17.13'
+	id 'net.fabricmc.fabric-loom' version '1.17.14'
 }
 
 version = project.mod_version
@@ -21,7 +21,7 @@ final def jnaVersion = '5.19.1'
 
 //final def asmVersion = '9.10.1'
 
-final def lwjglVersion = '3.4.2-SNAPSHOT'
+final def lwjglVersion = '3.4.2'
 
 repositories {
     // Required for LWJGL snapshots
