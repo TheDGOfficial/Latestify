@@ -95,7 +95,7 @@ dependencies {
     addDep('com.google.code.gson:gson:2.14.0')
     addDep('com.google.guava:guava:33.6.0-jre')
     addDep('com.ibm.icu:icu4j:78.3')
-    addDep('com.microsoft.azure:msal4j:1.25.0')
+    addDep('com.microsoft.azure:msal4j:1.25.1')
 
     addDep('com.mojang:text2speech:1.19.12')
     addDep('commons-codec:commons-codec:1.22.0')
