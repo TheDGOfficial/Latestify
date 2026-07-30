@@ -46,7 +46,7 @@ dependencies {
     }
 
     // Fixes security issues (4.2.13+)!
-    final def linux = ['linux-aarch_64', 'linux-riscv64', 'linux-x86_64']
+    final def linux = ['linux-aarch_64', 'linux-x86_64']
     final def mac = ['osx-aarch_64', 'osx-x86_64']
 
     [
@@ -63,8 +63,8 @@ dependencies {
         "io.netty:netty-transport-classes-kqueue:$nettyVersion",
         "io.netty:netty-transport-classes-io_uring:$nettyVersion",
         "io.netty:netty-transport-native-unix-common:$nettyVersion",
-        "io.netty:netty-transport-native-epoll:$nettyVersion",
-        "io.netty:netty-transport-native-kqueue:$nettyVersion",
+        //"io.netty:netty-transport-native-epoll:$nettyVersion",
+        //"io.netty:netty-transport-native-kqueue:$nettyVersion",
         "io.netty:netty-transport-native-io_uring:$nettyVersion",
         "io.netty:netty-handler:$nettyVersion",
     ].each(addDep)
@@ -153,7 +153,7 @@ dependencies {
     //addDep('it.unimi.dsi:fastutil:8.5.18')
     //addDep('org.apache.commons:commons-compress:1.28.0')
     //addDep('org.jcraft:jorbis:0.0.17')
-    //addDep('org.jspecify:jspecify:1.0.0')
+    addDep('org.jspecify:jspecify:1.0.1')
     //addDep('com.mojang:datafixerupper:9.0.19') // 10.0.21 available (crashes on 26.1.2 when clicking on multiplayer button)
 }
 
