@@ -93,7 +93,7 @@ dependencies {
     addDep('com.azure:azure-json:1.5.1')
 
     addDep('com.google.code.gson:gson:2.14.0')
-    addDep('com.google.guava:guava:33.6.0-jre')
+    addDep('com.google.guava:guava:33.7.1-jre')
     addDep('com.ibm.icu:icu4j:78.3')
     addDep('com.microsoft.azure:msal4j:1.25.1')
 
