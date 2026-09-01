@@ -21,7 +21,7 @@ final def jnaVersion = '5.19.1'
 
 //final def asmVersion = '9.10.1'
 
-final def lwjglVersion = '3.4.2'
+final def lwjglVersion = '3.4.3'
 
 repositories {
     // Required for LWJGL snapshots
