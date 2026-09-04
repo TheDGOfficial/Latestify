@@ -105,7 +105,7 @@ dependencies {
     addDep("net.java.dev.jna:jna-platform:$jnaVersion")
 
     addDep('org.apache.commons:commons-lang3:3.20.0')
-    addDep('org.slf4j:slf4j-api:2.0.18') // 2.1.0-alpha1 available
+    addDep('org.slf4j:slf4j-api:2.0.19') // 2.1.0-alpha1 available
     addDep('net.sf.jopt-simple:jopt-simple:6.0-alpha-3')
 
     addDep('org.joml:joml:1.10.9')
