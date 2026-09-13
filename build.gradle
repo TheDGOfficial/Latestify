@@ -24,8 +24,18 @@ final def jnaVersion = '5.19.1'
 final def lwjglVersion = '3.4.3'
 
 repositories {
-    // Required for LWJGL snapshots
-    maven { url "https://central.sonatype.com/repository/maven-snapshots" }
+    exclusiveContent {
+        forRepository {
+            mavenCentral()
+        }
+        filter {
+            includeGroup('org.lwjgl')
+        }
+    }
+
+    maven {
+        url = 'https://central.sonatype.com/repository/maven-snapshots'
+    }
 }
 
 dependencies {
@@ -33,7 +43,7 @@ dependencies {
         transitive = false
     }
 
-	implementation('net.fabricmc:fabric-loader:0.19.3') {
+	implementation('net.fabricmc:fabric-loader:0.19.5') {
         transitive = false
     }
 
@@ -89,7 +99,7 @@ dependencies {
     addDep("org.apache.logging.log4j:log4j-slf4j2-impl:$log4jVersion")
 
     // Others
-    addDep('at.yawk.lz4:lz4-java:1.11.2')
+    addDep('at.yawk.lz4:lz4-java:1.11.3')
     addDep('com.azure:azure-json:1.5.1')
 
     addDep('com.google.code.gson:gson:2.14.0')
