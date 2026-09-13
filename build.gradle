@@ -13,8 +13,8 @@ loom {
 	}
 }
 
-final def nettyVersion = '4.2.17.Final'
-final def nettyUtilVersion = '0.0.10.Final'
+final def nettyVersion = '4.2.18.Final'
+final def nettyUtilVersion = '0.0.11.Final'
 
 final def log4jVersion = '2.26.1'
 final def jnaVersion = '5.19.1'
@@ -62,20 +62,20 @@ dependencies {
     [
         "io.netty:netty-common:$nettyVersion",
         "io.netty:netty-buffer:$nettyVersion",
-        "io.netty:netty-codec:$nettyVersion",
+        "io.netty:netty-codec:$nettyVersion", // vanilla doesn't have base codec package in its version manifest, but it is a transitive dep that is not include()'d
         "io.netty:netty-codec-base:$nettyVersion",
         "io.netty:netty-codec-http:$nettyVersion",
         "io.netty:netty-codec-compression:$nettyVersion",
         "io.netty:netty-resolver:$nettyVersion",
-        "io.netty:netty-jni-util:$nettyUtilVersion",
+        "io.netty:netty-jni-util:$nettyUtilVersion", // vanilla does not ship it but ModernNetty needs it
         "io.netty:netty-transport:$nettyVersion",
         "io.netty:netty-transport-classes-epoll:$nettyVersion",
         "io.netty:netty-transport-classes-kqueue:$nettyVersion",
-        "io.netty:netty-transport-classes-io_uring:$nettyVersion",
+        "io.netty:netty-transport-classes-io_uring:$nettyVersion", // vanilla does not ship it but ModernNetty needs it
         "io.netty:netty-transport-native-unix-common:$nettyVersion",
         //"io.netty:netty-transport-native-epoll:$nettyVersion",
         //"io.netty:netty-transport-native-kqueue:$nettyVersion",
-        "io.netty:netty-transport-native-io_uring:$nettyVersion",
+        "io.netty:netty-transport-native-io_uring:$nettyVersion", // vanilla does not ship it but ModernNetty needs it
         "io.netty:netty-handler:$nettyVersion",
     ].each(addDep)
 
@@ -91,7 +91,7 @@ dependencies {
         addDep(dep)
     }
 
-    addDep("io.netty:netty-jni-util:$nettyUtilVersion")
+    addDep("io.netty:netty-jni-util:$nettyUtilVersion") // vanilla does not ship it but ModernNetty needs it
 
     // Fixes security issues (2.25.4+)!
     addDep("org.apache.logging.log4j:log4j-api:$log4jVersion") // 3.0.0-beta3 available
