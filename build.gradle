@@ -131,7 +131,7 @@ dependencies {
     addDep("org.ow2.asm:asm-util:$asmVersion")
     */
 
-    addDep('com.github.oshi:oshi-core:6.12.0') // 7.1.0 available; the game depends on older removed deprecated methods being present though
+    addDep('com.github.oshi:oshi-core:7.6.1') // 7.1.0 available; the game depends on older removed deprecated methods being present though
 
     // Trying to force a newer LWJGL first makes Sodium complain about mismatched GLFW version,
     // and then crashes the game if you disable Sodium's complaint due to a missing preedit IME callback error.
