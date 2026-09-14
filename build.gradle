@@ -108,7 +108,7 @@ dependencies {
     addDep('com.microsoft.azure:msal4j:1.25.1')
 
     addDep('com.mojang:text2speech:1.19.12')
-    addDep('commons-codec:commons-codec:1.22.0')
+    addDep('commons-codec:commons-codec:1.22.1')
     addDep('commons-io:commons-io:2.22.0')
 
     addDep("net.java.dev.jna:jna:$jnaVersion")
