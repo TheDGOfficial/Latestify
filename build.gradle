@@ -135,6 +135,7 @@ dependencies {
 
     // Trying to force a newer LWJGL first makes Sodium complain about mismatched GLFW version,
     // and then crashes the game if you disable Sodium's complaint due to a missing preedit IME callback error.
+    addDep("org.lwjgl:lwjgl:$lwjglVersion")
     addDep("org.lwjgl:lwjgl:$lwjglVersion:unsafe")
     addDep("org.lwjgl:lwjgl-freetype:$lwjglVersion")
     addDep("org.lwjgl:lwjgl-glfw:$lwjglVersion")
