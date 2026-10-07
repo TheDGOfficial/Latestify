@@ -11,6 +11,8 @@ loom {
 			sourceSet sourceSets.main
 		}
 	}
+
+    uncompressNestedJars = true
 }
 
 final def nettyVersion = '4.2.18.Final'
