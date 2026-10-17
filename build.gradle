@@ -45,7 +45,7 @@ dependencies {
         transitive = false
     }
 
-	implementation('net.fabricmc:fabric-loader:0.19.5') {
+	implementation('net.fabricmc:fabric-loader:0.20.0') {
         transitive = false
     }
 
