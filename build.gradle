@@ -1,5 +1,5 @@
 plugins {
-	id 'net.fabricmc.fabric-loom' version '1.18.2'
+	id 'net.fabricmc.fabric-loom' version '1.19-SNAPSHOT'
 }
 
 version = project.mod_version
@@ -45,7 +45,7 @@ dependencies {
         transitive = false
     }
 
-	implementation('net.fabricmc:fabric-loader:0.20.0') {
+	implementation('net.fabricmc:fabric-loader:0.20.1') {
         transitive = false
     }
 
