@@ -15,7 +15,7 @@ loom {
     uncompressNestedJars = true
 }
 
-final def nettyVersion = '4.2.19.Final'
+final def nettyVersion = '4.2.20.Final'
 final def nettyUtilVersion = '0.0.12.Final'
 
 final def log4jVersion = '2.26.1'
