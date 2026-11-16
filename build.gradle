@@ -116,7 +116,7 @@ dependencies {
     addDep("net.java.dev.jna:jna:$jnaVersion")
     addDep("net.java.dev.jna:jna-platform:$jnaVersion")
 
-    addDep('org.apache.commons:commons-lang3:3.21.0') // same as 26.2 version
+    addDep('org.apache.commons:commons-lang3:3.22.0') // same as 26.2 version
     addDep('org.slf4j:slf4j-api:2.0.20') // 2.1.0-alpha1 available
     addDep('net.sf.jopt-simple:jopt-simple:6.0-alpha-3')
 
