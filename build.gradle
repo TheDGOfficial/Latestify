@@ -101,7 +101,7 @@ dependencies {
     addDep("org.apache.logging.log4j:log4j-slf4j2-impl:$log4jVersion")
 
     // Others
-    addDep('at.yawk.lz4:lz4-java:1.14.1')
+    addDep('at.yawk.lz4:lz4-java:1.15.0')
     addDep('com.azure:azure-json:1.5.1')
 
     addDep('com.google.code.gson:gson:2.15.0')
@@ -122,7 +122,7 @@ dependencies {
 
     addDep('org.joml:joml:1.10.9')
 
-    addDep('com.mojang:authlib:10.0.77') // same as 26.2 version
+    addDep('com.mojang:authlib:12.0.82') // same as 26.4 version; 26.2 and 26.3 both have 10.0.77
 
     // ASM must be upgraded in versions/26.1.2-fabric-loader-0.19.2.json file, otherwise crashes game
     /*
@@ -133,7 +133,7 @@ dependencies {
     addDep("org.ow2.asm:asm-util:$asmVersion")
     */
 
-    addDep('com.github.oshi:oshi-core:6.12.0') // 7.6.1 available; the game depends on older removed deprecated methods being present though
+    addDep('com.github.oshi:oshi-core:6.12.0') // 7.6.1 available; the game depends on older removed deprecated methods being present though. They updated to 7.x in 26.4.
 
     // Trying to force a newer LWJGL first makes Sodium complain about mismatched GLFW version,
     // and then crashes the game if you disable Sodium's complaint due to a missing preedit IME callback error.
@@ -170,7 +170,7 @@ dependencies {
     //addDep('org.apache.commons:commons-compress:1.28.0')
     //addDep('org.jcraft:jorbis:0.0.17')
     addDep('org.jspecify:jspecify:1.0.1')
-    //addDep('com.mojang:datafixerupper:10.0.21') // same as 26.2 version
+    //addDep('com.mojang:datafixerupper:10.0.21') // same as 26.2 and 26.3 versions. 26.4 has newer version that crashes on 26.2
     //addDep('ca.weblite:java-objc-bridge:1.1') // same as 26.2 version
 }
 
