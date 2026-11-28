@@ -93,8 +93,6 @@ dependencies {
         addDep(dep)
     }
 
-    addDep("io.netty:netty-jni-util:$nettyUtilVersion") // vanilla does not ship it but ModernNetty needs it
-
     // Fixes security issues (2.25.4+)!
     addDep("org.apache.logging.log4j:log4j-api:$log4jVersion") // 3.0.0-beta3 available
     addDep("org.apache.logging.log4j:log4j-core:$log4jVersion")
@@ -116,13 +114,13 @@ dependencies {
     addDep("net.java.dev.jna:jna:$jnaVersion")
     addDep("net.java.dev.jna:jna-platform:$jnaVersion")
 
-    addDep('org.apache.commons:commons-lang3:3.22.0') // same as 26.2 version
+    addDep('org.apache.commons:commons-lang3:3.22.0')
     addDep('org.slf4j:slf4j-api:2.0.20') // 2.1.0-alpha1 available
     addDep('net.sf.jopt-simple:jopt-simple:6.0-alpha-3')
 
     addDep('org.joml:joml:1.10.9')
 
-    addDep('com.mojang:authlib:12.0.82') // same as 26.4 version; 26.2 and 26.3 both have 10.0.77
+    addDep('com.mojang:authlib:13.0.85') // same as 26.4-snapshot-10 version; 26.2 has 9.0.75 and 26.3 has 10.0.77
 
     // ASM must be upgraded in versions/26.1.2-fabric-loader-0.19.2.json file, otherwise crashes game
     /*
@@ -141,6 +139,7 @@ dependencies {
     addDep("org.lwjgl:lwjgl:$lwjglVersion:unsafe")
     addDep("org.lwjgl:lwjgl-freetype:$lwjglVersion")
     addDep("org.lwjgl:lwjgl-glfw:$lwjglVersion")
+    //addDep("org.lwjgl:lwjgl-sdl:$lwjglVersion")
     addDep("org.lwjgl:lwjgl-jemalloc:$lwjglVersion")
     addDep("org.lwjgl:lwjgl-openal:$lwjglVersion")
     addDep("org.lwjgl:lwjgl-opengl:$lwjglVersion")
@@ -153,9 +152,13 @@ dependencies {
     addDep("org.lwjgl:lwjgl:$lwjglVersion:natives-linux")
     addDep("org.lwjgl:lwjgl-freetype:$lwjglVersion:natives-linux")
     addDep("org.lwjgl:lwjgl-glfw:$lwjglVersion:natives-linux")
+    //addDep("org.lwjgl:lwjgl-sdl:$lwjglVersion:natives-linux")
     addDep("org.lwjgl:lwjgl-jemalloc:$lwjglVersion:natives-linux")
     addDep("org.lwjgl:lwjgl-openal:$lwjglVersion:natives-linux")
     addDep("org.lwjgl:lwjgl-opengl:$lwjglVersion:natives-linux")
+    addDep("org.lwjgl:lwjgl-shaderc:$lwjglVersion:natives-linux")
+    addDep("org.lwjgl:lwjgl-spvc:$lwjglVersion:natives-linux")
+    addDep("org.lwjgl:lwjgl-vma:$lwjglVersion:natives-linux")
     addDep("org.lwjgl:lwjgl-stb:$lwjglVersion:natives-linux")
     addDep("org.lwjgl:lwjgl-tinyfd:$lwjglVersion:natives-linux")
 
